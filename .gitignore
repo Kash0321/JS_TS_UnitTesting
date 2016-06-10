@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs
+/packages
+/Kash.JSTSUT.Web/bin
+/Kash.JSTSUT.Web/obj/Debug
