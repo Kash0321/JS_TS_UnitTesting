@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/.vs
+/src/Kash.JSTSUT.Web/bin
+/src/Kash.JSTSUT.Web/obj
+/src/Kash.JSTSUT.Web.Tests/bin
+/src/Kash.JSTSUT.Web.Tests/obj
+/src/packages
