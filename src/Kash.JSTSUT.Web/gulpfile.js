@@ -1,4 +1,4 @@
-﻿/// <binding BeforeBuild='_dev:build' Clean='cmn:clear' />
+﻿/// <binding />
 /*
 This file in the main entry point for defining Gulp tasks and using Gulp plugins.
 Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
@@ -12,7 +12,7 @@ var gulp = require('gulp'),
   mainfiles = require('gulp-main-bower-files'),
   filter = require('gulp-filter'),
   less = require('gulp-less'),
-  cssmin = require('gulp-clean-css'),
+  cssmin = require('gulp-uglifycss'),
   uglify = require('gulp-uglify');
 
 var filters = {
@@ -38,6 +38,7 @@ gulp.task('cmn:clear', function () {
 });
 
 gulp.task('_dev:build', ['cmn:clear', 'cmn:fonts', 'dev:bundle-lib-js', 'dev:bundle-lib-css-less', 'dev:bundle-app-css'], function () { });
+gulp.task('_prd:build', ['cmn:clear', 'cmn:fonts', 'prd:bundle-lib-js', 'prd:bundle-lib-css-less', 'prd:bundle-app-css'], function () { });
 
 gulp.task('dev:bundle-lib-js', ['cmn:clear'], function () {
     return gulp.src('./bower.json')
@@ -47,6 +48,15 @@ gulp.task('dev:bundle-lib-js', ['cmn:clear'], function () {
             .pipe(concat('lib.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(roots.scripts));
+});
+
+gulp.task('prd:bundle-lib-js', ['cmn:clear'], function () {
+    return gulp.src("./bower.json")
+    .pipe(mainfiles())
+    .pipe(filters.js)
+    .pipe(concat("lib.js"))
+    .pipe(uglify())
+    .pipe(gulp.dest(roots.scripts));
 });
 
 gulp.task('dev:bundle-lib-css-less', ['cmn:clear'], function () {
@@ -60,11 +70,28 @@ gulp.task('dev:bundle-lib-css-less', ['cmn:clear'], function () {
         .pipe(gulp.dest(roots.css));
 });
 
+gulp.task('prd:bundle-lib-css-less', ['cmn:clear'], function () {
+    return gulp.src('./bower.json')
+        .pipe(mainfiles())
+        .pipe(filters.less)
+        .pipe(less())
+        .pipe(concat("lib.css"))
+        .pipe(cssmin({ 'uglyComments': true }))
+        .pipe(gulp.dest(roots.css));
+});
+
 gulp.task('dev:bundle-app-css', ['cmn:clear'], function () {
     return gulp.src(components.appstyles)
         .pipe(sourcemaps.init())
             .pipe(concat('site.css'))
         .pipe(sourcemaps.write())
+        .pipe(gulp.dest(roots.css));
+});
+
+gulp.task('prd:bundle-app-css', ['cmn:clear'], function () {
+    return gulp.src(components.appstyles)
+        .pipe(concat('site.css'))
+        .pipe(cssmin({ 'uglyComments': true }))
         .pipe(gulp.dest(roots.css));
 });
 
