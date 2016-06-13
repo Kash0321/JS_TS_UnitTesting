@@ -1,0 +1,26 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlNpdGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwiZmlsZSI6InNpdGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYm9keSB7XHJcbiAgICBwYWRkaW5nLXRvcDogNTBweDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAyMHB4O1xyXG59XHJcblxyXG4vKiBTZXQgcGFkZGluZyB0byBrZWVwIGNvbnRlbnQgZnJvbSBoaXR0aW5nIHRoZSBlZGdlcyAqL1xyXG4uYm9keS1jb250ZW50IHtcclxuICAgIHBhZGRpbmctbGVmdDogMTVweDtcclxuICAgIHBhZGRpbmctcmlnaHQ6IDE1cHg7XHJcbn1cclxuXHJcbi8qIE92ZXJyaWRlIHRoZSBkZWZhdWx0IGJvb3RzdHJhcCBiZWhhdmlvciB3aGVyZSBob3Jpem9udGFsIGRlc2NyaXB0aW9uIGxpc3RzIFxyXG4gICB3aWxsIHRydW5jYXRlIHRlcm1zIHRoYXQgYXJlIHRvbyBsb25nIHRvIGZpdCBpbiB0aGUgbGVmdCBjb2x1bW4gXHJcbiovXHJcbi5kbC1ob3Jpem9udGFsIGR0IHtcclxuICAgIHdoaXRlLXNwYWNlOiBub3JtYWw7XHJcbn1cclxuXHJcbi8qIFNldCB3aWR0aCBvbiB0aGUgZm9ybSBpbnB1dCBlbGVtZW50cyBzaW5jZSB0aGV5J3JlIDEwMCUgd2lkZSBieSBkZWZhdWx0ICovXHJcbmlucHV0LFxyXG5zZWxlY3QsXHJcbnRleHRhcmVhIHtcclxuICAgIG1heC13aWR0aDogMjgwcHg7XHJcbn1cclxuIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9 */
