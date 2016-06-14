@@ -248,8 +248,10 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ScriptsDev\app.ts" />
+    <TypeScriptCompile Include="ScriptsDev\IIndexViewModel.ts" />
+    <TypeScriptCompile Include="ScriptsDev\IndexController.ts" />
     <TypeScriptCompile Include="ScriptsDev\lib.d.ts" />
-    <TypeScriptCompile Include="ScriptsDev\IndexController.spec.ts" />
+    <TypeScriptCompile Include="ScriptsDev\tests\IndexController.spec.ts" />
     <TypeScriptCompile Include="typings\globals\angular-ui-router\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\angular\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
@@ -269,7 +271,7 @@
     <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
     <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
-    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
     <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
     <TypeScriptOutFile>
     </TypeScriptOutFile>
