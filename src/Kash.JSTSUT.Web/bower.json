@@ -1,12 +1,16 @@
 {
-	"name": "asp.net",
-	"private": true,
+  "name": "asp.net",
+  "private": true,
   "dependencies": {
     "angular": "1.5.6",
     "angular-ui-router": "0.3.1",
+    "angular-mocks": "1.4.7",
     "bootstrap": "3.3.6",
     "jquery": "2.2.4",
     "jquery-validation-unobtrusive": "3.2.6",
     "respond": "1.4.2"
+  },
+  "resolutions": {
+    "angular": "^1.0.8"
   }
 }

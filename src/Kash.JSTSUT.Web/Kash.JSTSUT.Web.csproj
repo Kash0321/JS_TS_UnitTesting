@@ -189,6 +189,7 @@
     <Content Include="Global.asax" />
     <Content Include="ContentDev\Site.css" />
     <Content Include="gulpfile.js" />
+    <Content Include="karma.conf.js" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\lib.js" />
     <Content Include="Scripts\_references.js" />
@@ -243,12 +244,15 @@
     <Content Include="typings\globals\angular-ui-router\typings.json" />
     <Content Include="typings\globals\angular\typings.json" />
     <Content Include="typings\globals\jquery\typings.json" />
+    <Content Include="typings\globals\jasmine\typings.json" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ScriptsDev\app.ts" />
     <TypeScriptCompile Include="ScriptsDev\lib.d.ts" />
+    <TypeScriptCompile Include="ScriptsDev\IndexController.spec.ts" />
     <TypeScriptCompile Include="typings\globals\angular-ui-router\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\angular\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jquery\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
   </ItemGroup>
