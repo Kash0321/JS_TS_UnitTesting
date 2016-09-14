@@ -5,9 +5,12 @@ module.exports = function (config) {
 
         plugins: [
           'karma-jasmine',
-          'karma-phantomjs-launcher',
           'karma-commonjs',
-          'karma-coverage'
+          'karma-coverage',
+          'karma-phantomjs-launcher',
+          'karma-chrome-launcher',
+          'karma-firefox-launcher',
+          'karma-ie-launcher',
         ],
 
         preprocessors: {
@@ -24,12 +27,14 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
 
         files: [
-          './ScriptsDev/tests/**/*.js'
+          'lib.js',
+          'app.js',
+          'tests/*.spec.js'
         ],
 
 
         // list of files to exclude
-        exclude: ['lib.js'],
+        exclude: ['_references.js'],
 
         // test results reporter to use
         // possible values: dots || progress || growl
@@ -59,8 +64,7 @@ module.exports = function (config) {
         // - Safari (only Mac)
         // - PhantomJS
         // - IE (only Windows)
-        browsers: ['Chrome'],
-        // browsers: [process.env.TRAVIS ? 'Firefox' : 'Chrome'],
+        browsers: ['Chrome', 'Firefox', 'IE'],
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 5000,

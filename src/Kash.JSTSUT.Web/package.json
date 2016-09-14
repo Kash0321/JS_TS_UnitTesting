@@ -22,6 +22,10 @@
     "karma-commonjs": "1.0.0",
     "karma-jasmine": "1.0.2",
     "karma-phantomjs-launcher": "1.0.0",
-    "phantomjs": "2.1.7"
+    "phantomjs": "2.1.7",
+    "phantomjs-prebuilt": "2.1.12",
+    "karma-chrome-launcher": "2.0.0",
+    "karma-firefox-launcher": "1.0.0",
+    "karma-ie-launcher": "1.0.0"
   }
 }
