@@ -190,9 +190,12 @@
     <Content Include="ContentDev\Site.css" />
     <Content Include="gulpfile.js" />
     <Content Include="karma.conf.js" />
+    <Content Include="ScriptsDev\tests\indexController.spec.js" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\lib.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="ScriptsDev\app.js" />
+    <Content Include="ScriptsDev\indexController.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -241,22 +244,6 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Project_Readme.html" />
     <Content Include="typings.json" />
-    <Content Include="typings\globals\angular-ui-router\typings.json" />
-    <Content Include="typings\globals\angular\typings.json" />
-    <Content Include="typings\globals\jquery\typings.json" />
-    <Content Include="typings\globals\jasmine\typings.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="ScriptsDev\app.ts" />
-    <TypeScriptCompile Include="ScriptsDev\IIndexViewModel.ts" />
-    <TypeScriptCompile Include="ScriptsDev\IndexController.ts" />
-    <TypeScriptCompile Include="ScriptsDev\lib.d.ts" />
-    <TypeScriptCompile Include="ScriptsDev\tests\IndexController.spec.ts" />
-    <TypeScriptCompile Include="typings\globals\angular-ui-router\index.d.ts" />
-    <TypeScriptCompile Include="typings\globals\angular\index.d.ts" />
-    <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
-    <TypeScriptCompile Include="typings\globals\jquery\index.d.ts" />
-    <TypeScriptCompile Include="typings\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
