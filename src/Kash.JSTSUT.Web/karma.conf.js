@@ -21,20 +21,20 @@ module.exports = function (config) {
         },
 
         // base path, that will be used to resolve files and exclude
-        basePath: './Scripts',
+        basePath: '.',
 
         // list of files / patterns to load in the browser
         frameworks: ['jasmine'],
 
         files: [
-          'lib.js',
-          'app.js',
-          'tests/*.spec.js'
+          'Scripts/lib.js',
+          'Scripts/app.js',
+          'ScriptsDev/tests/*.spec.js'
         ],
 
 
         // list of files to exclude
-        exclude: ['_references.js'],
+        exclude: ['Scripts/_references.js'],
 
         // test results reporter to use
         // possible values: dots || progress || growl

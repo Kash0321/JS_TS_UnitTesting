@@ -195,7 +195,7 @@
     <Content Include="karma.conf.js" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\lib.js" />
-    <Content Include="Scripts\tests\indexController.spec.js" />
+    <Content Include="ScriptsDev\tests\indexController.spec.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="ScriptsDev\app.js" />
     <Content Include="ScriptsDev\indexController.js" />
