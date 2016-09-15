@@ -5,22 +5,30 @@
 <h1><i class="glyphicon glyphicon-globe"></i>&nbsp;Hola mundo</h1>
 <hr />
 
-<div ng-controller="indexController as vm">
+<div ng-controller="indexController as vm" ng-init="vm.init()">
     <div class="panel panel-primary">
         <div class="panel-heading">
             Datos vinculados
         </div>
         <div class="panel-body">
-            <div class="row">
-                <span class="col-md-1 text-right field_lbl">Nombre</span><span class="col-md-11">{{vm.Name}}</span>
-            </div>
-            <div class="row">
-                <span class="col-md-1 text-right field_lbl">Status</span><span class="col-md-11">{{vm.Status}}</span>
-            </div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="name" class="col-sm-1 text-right">Nombre</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="name" placeholder="Nombre" ng-model="vm.Name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="col-sm-1 text-right">Status</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="status" placeholder="Status" ng-model="vm.Status" />
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     <div class="well well-sm">
-        <button class="btn btn-default" ng-click="vm.FillDataForTests()">Cargar datos</button>
-        <button class="btn btn-primary" ng-click="vm.Save()">Guardar datos</button>
+        @*<button class="btn btn-default" ng-click="vm.FillDataForTests()">Cargar datos</button>*@
+        <button class="btn btn-primary" ng-click="vm.save()">Guardar datos</button>
     </div>
 </div>
