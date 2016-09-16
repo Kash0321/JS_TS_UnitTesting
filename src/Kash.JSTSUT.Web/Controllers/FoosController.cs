@@ -18,7 +18,6 @@ namespace Kash.JSTSUT.Web.Controllers
             Data = new DataContext();
         }
 
-        // GET: api/Tests
         public IEnumerable<Foo> Get()
         {
             var q = Data.Foos;
@@ -26,7 +25,6 @@ namespace Kash.JSTSUT.Web.Controllers
             return q.ToList();
         }
 
-        // GET: api/Tests/5
         public IHttpActionResult Get(int id)
         {
             var foo = Data.Foos.Find(id);
@@ -38,7 +36,47 @@ namespace Kash.JSTSUT.Web.Controllers
             return Ok(foo);
         }
 
-        // POST: api/Tests
+        [Route("api/Foos/{id}/nextId")]
+        public IHttpActionResult GetNextId(int id)
+        {
+            var foo = Data.Foos.Find(id);
+
+            if (foo != null)
+            {
+                var fooNext = Data.Foos.OrderBy(f => f.Id).Where(f => f.Id > foo.Id).FirstOrDefault();
+                if (fooNext != null) return Ok(fooNext.Id);
+            }
+
+            return NotFound();
+        }
+
+        [Route("api/Foos/{id}/previousId")]
+        public IHttpActionResult GetPreviousId(int id)
+        {
+            var foo = Data.Foos.Find(id);
+
+            if (foo != null)
+            {
+                var fooNext = Data.Foos.OrderByDescending(f => f.Id).Where(f => f.Id < foo.Id).FirstOrDefault();
+                if (fooNext != null) return Ok(fooNext.Id);
+            }
+
+            return NotFound();
+        }
+
+        [Route("api/Foos/{id}/firstId")]
+        public IHttpActionResult GetFirstId()
+        {
+            var foo = Data.Foos.OrderBy(f => f.Id).FirstOrDefault();
+
+            if (foo != null)
+            {
+                return Ok(foo.Id);
+            }
+
+            return NotFound();
+        }
+
         public IHttpActionResult Post([FromBody]Foo value)
         {
             if (!ModelState.IsValid)
@@ -60,7 +98,6 @@ namespace Kash.JSTSUT.Web.Controllers
                 value);
         }
 
-        // PUT: api/Tests/5
         public IHttpActionResult Put(int id, [FromBody]Foo value)
         {
             if (!ModelState.IsValid)
@@ -81,7 +118,6 @@ namespace Kash.JSTSUT.Web.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // DELETE: api/Tests/5
         public IHttpActionResult Delete(int id)
         {
             var foo = Data.Foos.Find(id);
