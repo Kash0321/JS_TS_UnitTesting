@@ -1,11 +1,15 @@
-﻿angular.module('app').controller('indexController', function ($http) {
+﻿angular
+    .module('app')
+    .controller('indexController', IndexController);
+
+function IndexController($http) {
     var vm = this;
 
     vm.showMessage = function (status, message) {
         vm.messageStatus = status;
         vm.message = message;
         $('#msgWindow').modal();
-    };
+    }
 
     vm.save = function () {
         if (vm.isNew) {
@@ -19,7 +23,7 @@
                 vm.showMessage('Información del sistema', 'Guardado correctamente');
             });
         };
-    };
+    }
 
     vm.delete = function () {
         $http.delete('/Kash.JSTSUT.Web/api/Foos/' + vm.Id, {}).then(function (req) {
@@ -28,7 +32,7 @@
             vm.isNew = false;
             vm.retrieveFoo('previous');
         });
-    };
+    }
 
     vm.new = function () {
         vm.Id = 0;
@@ -36,7 +40,7 @@
         vm.Status = '';
 
         vm.isNew = true;
-    };
+    }
 
     vm.retrieveFoo = function (mode) {
         var theId = undefined;
@@ -54,5 +58,5 @@
             vm.showMessage(result.status, result.statusText);
             vm.new();
         });
-    };
-});
+    }
+}

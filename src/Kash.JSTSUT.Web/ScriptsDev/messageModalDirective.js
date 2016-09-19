@@ -2,7 +2,7 @@
     var directive = {
         restrict: 'E',
         replace: true,
-        templateUrl: 'scripts/views/messageModal.html',
+        templateUrl: 'scripts/templates/messageModal.html',
         scope: {},
         bindToController: {
             messageStatus: '=',

@@ -25,7 +25,7 @@ var filters = {
 var paths = {
     bowercomponents: './bower_components/',
     scripts: './Scripts/',
-    views: './Scripts/Views/',
+    views: './Scripts/templates/',
     fonts: './Content/fonts/',
     css: './Content/css/'
 };

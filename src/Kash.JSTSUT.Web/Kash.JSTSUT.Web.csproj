@@ -194,11 +194,11 @@
     <Content Include="gulpfile.js" />
     <Content Include="karma.conf.js" />
     <Content Include="ScriptsDev\messageModalDirective.js" />
-    <Content Include="ScriptsDev\views\messageModal.html" />
+    <Content Include="ScriptsDev\templates\messageModal.html" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\lib.js" />
     <Content Include="ScriptsDev\tests\indexController.spec.js" />
-    <Content Include="Scripts\Views\messageModal.html" />
+    <Content Include="Scripts\templates\messageModal.html" />
     <Content Include="Scripts\_references.js" />
     <Content Include="ScriptsDev\app.js" />
     <Content Include="ScriptsDev\indexController.js" />
