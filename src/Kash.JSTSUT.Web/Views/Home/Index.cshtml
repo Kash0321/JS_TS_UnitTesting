@@ -5,41 +5,7 @@
 <h1><i class="glyphicon glyphicon-globe"></i>&nbsp;Hola mundo</h1>
 <hr />
 
-<div ng-controller="indexController as vm" ng-init="vm.retrieveFoo('first')">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            Datos vinculados
-            <span ng-show="vm.isNew" class="badge pull-right">Nuevo</span>
-        </div>
-        <div class="panel-body">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="name" class="col-sm-1 text-right">Nombre</label>
-                    <div class="col-sm-11">
-                        <input type="text" class="form-control" id="name" placeholder="Nombre" ng-model="vm.Name" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="status" class="col-sm-1 text-right">Status</label>
-                    <div class="col-sm-11">
-                        <input type="text" class="form-control" id="status" placeholder="Status" ng-model="vm.Status" />
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="well well-sm clearfix">
-        <div class="pull-left">
-            <button ng-show="!vm.isNew" class="btn btn-default" ng-click="vm.retrieveFoo('previous')">< Anterior</button>
-            <button class="btn btn-default" ng-click="vm.retrieveFoo('first')">Primero</button>
-            <button ng-show="!vm.isNew" class="btn btn-default" ng-click="vm.retrieveFoo('next')">Siguiente ></button>
-        </div>
-        <div class="pull-right">
-            <button ng-show="!vm.isNew" class="btn btn-success" ng-click="vm.new()">Nuevo</button>
-            <button class="btn btn-primary" ng-click="vm.save()">Guardar datos</button>
-            <button ng-show="!vm.isNew" class="btn btn-danger" ng-click="vm.delete()">Eliminar</button>
-        </div>
-    </div>
-    <message-modal modal-id="msgWindow" message-status="vm.messageStatus" message="vm.message"  />
+<div ng-controller="indexController as vm">
+    <foo-manager manager-id="mngWindow" />
 </div>
 

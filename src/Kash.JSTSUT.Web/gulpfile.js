@@ -34,7 +34,7 @@ var components = {
     bootstrapfonts: paths.bowercomponents + 'bootstrap/dist/fonts/*.*',
     appstyles: './ContentDev/*.css',
     appjs: './ScriptsDev/*.js',
-    apphtml: './ScriptsDev/views/*.html'
+    apphtml: './ScriptsDev/templates/*.html'
 };
 
 gulp.task('cmn:clear', function () {

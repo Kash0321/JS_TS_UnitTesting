@@ -39,29 +39,29 @@ namespace Kash.JSTSUT.Web.Controllers
         [Route("api/Foos/{id}/nextId")]
         public IHttpActionResult GetNextId(int id)
         {
-            var foo = Data.Foos.Find(id);
-
-            if (foo != null)
+            var fooNext = Data.Foos.OrderBy(f => f.Id).Where(f => f.Id > id).FirstOrDefault();
+            if (fooNext != null)
             {
-                var fooNext = Data.Foos.OrderBy(f => f.Id).Where(f => f.Id > foo.Id).FirstOrDefault();
-                if (fooNext != null) return Ok(fooNext.Id);
+                return Ok(fooNext.Id);
             }
-
-            return NotFound();
+            else
+            {
+                return NotFound();
+            }
         }
 
         [Route("api/Foos/{id}/previousId")]
         public IHttpActionResult GetPreviousId(int id)
         {
-            var foo = Data.Foos.Find(id);
-
-            if (foo != null)
+            var fooPrev = Data.Foos.OrderByDescending(f => f.Id).Where(f => f.Id < id).FirstOrDefault();
+            if (fooPrev != null)
             {
-                var fooNext = Data.Foos.OrderByDescending(f => f.Id).Where(f => f.Id < foo.Id).FirstOrDefault();
-                if (fooNext != null) return Ok(fooNext.Id);
+                return Ok(fooPrev.Id);
             }
-
-            return NotFound();
+            else
+            {
+                return NotFound();
+            }
         }
 
         [Route("api/Foos/{id}/firstId")]
