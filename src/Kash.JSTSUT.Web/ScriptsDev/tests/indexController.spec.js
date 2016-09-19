@@ -11,7 +11,17 @@
         $controller = _$controller_;
     }));
 
-    describe('FillDataForTests', function () {
+    describe('new', function () {
+        it("Los datos por defecto deberían ser Name: Kash, Status: Testing", function () {
+            var controller = $controller('indexController', {});
+            controller.new();
+            expect(controller.Id).toBe(0);
+            expect(controller.Name).toBe('');
+            expect(controller.Status).toBe('');
+        });
+    });
+
+    describe('Save', function () {
         it("Los datos por defecto deberían ser Name: Kash, Status: Testing", function () {
             var controller = $controller('indexController', {});
             controller.FillDataForTests();
@@ -19,13 +29,4 @@
             expect(controller.Status).toBe("Testing");
         });
     });
-
-    //describe('Save', function () {
-    //    it("Los datos por defecto deberían ser Name: Kash, Status: Testing", function () {
-    //        var controller = $controller('indexController', {});
-    //        controller.FillDataForTests();
-    //        expect(controller.Name).toBe("Kash");
-    //        expect(controller.Status).toBe("Testing");
-    //    });
-    //});
 });

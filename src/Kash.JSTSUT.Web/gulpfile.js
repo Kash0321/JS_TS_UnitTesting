@@ -25,6 +25,7 @@ var filters = {
 var paths = {
     bowercomponents: './bower_components/',
     scripts: './Scripts/',
+    views: './Scripts/Views/',
     fonts: './Content/fonts/',
     css: './Content/css/'
 };
@@ -32,15 +33,16 @@ var paths = {
 var components = {
     bootstrapfonts: paths.bowercomponents + 'bootstrap/dist/fonts/*.*',
     appstyles: './ContentDev/*.css',
-    appjs: './ScriptsDev/*.js'
+    appjs: './ScriptsDev/*.js',
+    apphtml: './ScriptsDev/views/*.html'
 };
 
 gulp.task('cmn:clear', function () {
     return del([paths.scripts + '**/*.js', '!' + paths.scripts + '_references.js', paths.fonts, paths.css]);
 });
 
-gulp.task('_dev:build', ['cmn:clear', 'cmn:fonts', 'dev:bundle-lib-js', 'dev:bundle-app-js', 'dev:bundle-lib-css-less', 'dev:bundle-app-css'], function () { });
-gulp.task('_prd:build', ['cmn:clear', 'cmn:fonts', 'prd:bundle-lib-js', 'prd:bundle-app-js', 'prd:bundle-lib-css-less', 'prd:bundle-app-css'], function () { });
+gulp.task('_dev:build', ['cmn:clear', 'cmn:fonts', 'cmn:html', 'dev:bundle-lib-js', 'dev:bundle-app-js', 'dev:bundle-lib-css-less', 'dev:bundle-app-css'], function () { });
+gulp.task('_prd:build', ['cmn:clear', 'cmn:fonts', 'cmn:html', 'prd:bundle-lib-js', 'prd:bundle-app-js', 'prd:bundle-lib-css-less', 'prd:bundle-app-css'], function () { });
 
 gulp.task('dev:bundle-lib-js', ['cmn:clear'], function () {
     return gulp.src('./bower.json')
@@ -110,6 +112,11 @@ gulp.task('prd:bundle-app-js', ['cmn:clear'], function () {
         .pipe(concat('app.js'))
         .pipe(uglify())
         .pipe(gulp.dest(paths.scripts));
+});
+
+gulp.task('cmn:html', ['cmn:clear'], function () {
+    return gulp.src(components.apphtml)
+        .pipe(gulp.dest(paths.views));
 });
 
 gulp.task('cmn:fonts', ['cmn:clear'], function () {
