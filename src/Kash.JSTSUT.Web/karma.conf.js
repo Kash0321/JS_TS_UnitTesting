@@ -3,15 +3,19 @@
 module.exports = function (config) {
     config.set({
 
-        plugins: [
-          'karma-jasmine',
-          'karma-commonjs',
-          'karma-coverage',
-          'karma-phantomjs-launcher', // Para probar sin navegador, con PhantomJS: http://phantomjs.org/
-          'karma-chrome-launcher',
-          'karma-firefox-launcher',
-          'karma-ie-launcher',
-        ],
+        //plugins: [
+        //  'karma-jasmine',
+        //  'karma-commonjs',
+        //  'karma-coverage',
+        //  'karma-phantomjs-launcher', // Para probar sin navegador, con PhantomJS: http://phantomjs.org/
+        //  'karma-chrome-launcher',
+        //  'karma-firefox-launcher',
+        //  'karma-ie-launcher',
+        //  'karma-jasmine-html-reporter',
+        //  'karma-spec-reporter',
+        //  'karma-jasmine-matchers',
+        //  'karma-jasmine-jquery-matchers'
+        //],
 
         preprocessors: {
             // source files, that you wanna generate coverage for
@@ -23,9 +27,9 @@ module.exports = function (config) {
         // base path, that will be used to resolve files and exclude
         basePath: '.',
 
-        // list of files / patterns to load in the browser
-        frameworks: ['jasmine'],
+        frameworks: ['jasmine', 'jasmine-matchers', 'jasmine-jquery-matchers'],
 
+        // list of files / patterns to load in the browser
         files: [
           'Scripts/lib.js',
           'Scripts/app.js',
@@ -38,7 +42,31 @@ module.exports = function (config) {
 
         // test results reporter to use
         // possible values: dots || progress || growl
-        reporters: ['progress'],
+        reporters: [
+            //'progress',
+            'kjhtml',
+            //'dots',
+            'spec',
+            'coverage',
+            ],
+
+        coverageReporter: {
+            reporters: [
+                {
+                    dir: 'reports/coverage/',
+                    subdir: '.',
+                    type: 'html'
+                },{
+                    dir: 'reports/coverage/',
+                    subdir: '.',
+                    type: 'cobertura'
+                }, {
+                    dir: 'reports/coverage/',
+                    subdir: '.',
+                    type: 'json'
+                }
+            ]
+        },
 
         // web server port
         port: 8080,

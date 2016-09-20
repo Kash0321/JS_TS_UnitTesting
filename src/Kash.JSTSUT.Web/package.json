@@ -17,15 +17,27 @@
     "gulp-sourcemaps": "1.6.0",
     "gulp-uglify": "1.5.3",
     "gulp-uglifycss": "1.0.6",
+    "babel-core": "6.13.2",
+    "babel-istanbul": "0.11.0",
+    "istanbul": "0.4.4",
+    "istanbul-instrumenter-loader": "0.2.0",
     "jasmine-core": "2.4.1",
+    "jasmine-expect": "2.0.2",
+    "jasmine-jquery": "2.1.1",
     "karma": "0.13.22",
+    "karma-coverage": "1.0.0",
     "karma-commonjs": "1.0.0",
     "karma-jasmine": "1.0.2",
+    "karma-jasmine-html-reporter": "0.2.2",
+    "karma-jasmine-jquery-matchers": "1.0.0",
+    "karma-jasmine-matchers": "2.0.2",
     "karma-phantomjs-launcher": "1.0.0",
     "phantomjs": "2.1.7",
     "phantomjs-prebuilt": "2.1.12",
     "karma-chrome-launcher": "2.0.0",
     "karma-firefox-launcher": "1.0.0",
-    "karma-ie-launcher": "1.0.0"
+    "karma-ie-launcher": "1.0.0",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-spec-reporter": "0.0.26"
   }
 }

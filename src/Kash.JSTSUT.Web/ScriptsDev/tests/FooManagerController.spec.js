@@ -46,14 +46,15 @@
             .expectPOST('/Kash.JSTSUT.Web/api/Foos', { Name: 'TestName', Status: 'TestStatus' })
             .respond(201, { Id: 123, Name: 'TestName', Status: 'TestStatus' });
 
-
         //Act
         controller.save();
+        //$httpMock.flush();
 
         //Assert
-        expect(controller.Id).toBe(0);
-        expect(controller.Name).toBe('');
-        expect(controller.Status).toBe('');
+
+        //expect(controller.Id).toBe(123);
+        expect(controller.Name).toBe('TestName');
+        expect(controller.Status).toBe('TestStatus');
     });
 
     it("Los datos por defecto deberían ser Id: 0, Name: '', Status: ''", function () {
