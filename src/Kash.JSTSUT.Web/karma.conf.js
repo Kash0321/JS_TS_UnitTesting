@@ -3,20 +3,6 @@
 module.exports = function (config) {
     config.set({
 
-        //plugins: [
-        //  'karma-jasmine',
-        //  'karma-commonjs',
-        //  'karma-coverage',
-        //  'karma-phantomjs-launcher', // Para probar sin navegador, con PhantomJS: http://phantomjs.org/
-        //  'karma-chrome-launcher',
-        //  'karma-firefox-launcher',
-        //  'karma-ie-launcher',
-        //  'karma-jasmine-html-reporter',
-        //  'karma-spec-reporter',
-        //  'karma-jasmine-matchers',
-        //  'karma-jasmine-jquery-matchers'
-        //],
-
         preprocessors: {
             // source files, that you wanna generate coverage for
             // do not include tests or libraries

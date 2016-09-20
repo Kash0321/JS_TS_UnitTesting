@@ -29,12 +29,6 @@
         //$httpMock.verifyNoOutstandingRequest();
     });
 
-    //var $controller;
-
-    //beforeEach(angular.mock.inject(function (_$controller_) {
-    //    $controller = _$controller_;
-    //}));
-
     it("save() Se debería haber creado un nuevo Foo con Id: 123, Name: 'TestName', Status: 'TestStatus'", function () {
         //Arrange
         var controller = createController();
@@ -52,7 +46,7 @@
 
         //Assert
 
-        //expect(controller.Id).toBe(123);
+        expect(controller.Id).toBe(123);
         expect(controller.Name).toBe('TestName');
         expect(controller.Status).toBe('TestStatus');
     });
