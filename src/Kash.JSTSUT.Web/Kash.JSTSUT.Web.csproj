@@ -193,6 +193,7 @@
     <Content Include="ContentDev\Site.css" />
     <Content Include="gulpfile.js" />
     <Content Include="karma.conf.js" />
+    <None Include="KarmaTestAdapter.json" />
     <Content Include="ScriptsDev\fooManagerDirective.js" />
     <Content Include="ScriptsDev\messageModalDirective.js" />
     <Content Include="ScriptsDev\templates\fooManager.html" />
