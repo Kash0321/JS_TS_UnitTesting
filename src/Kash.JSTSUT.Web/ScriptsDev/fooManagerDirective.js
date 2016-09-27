@@ -30,12 +30,21 @@ function FooManagerController($http) {
         if (vm.isNew) {
             $http.post('/Kash.JSTSUT.Web/api/Foos', { Name: vm.Name, Status: vm.Status }).then(function (req) {
                 vm.Id = req.data.Id;
+                vm.isNew = false;
                 vm.showMessage('Información del sistema', 'Creado correctamente');
+            },
+            function (result) {
+                vm.showMessage(result.status, result.statusText);
+                vm.new();
             });
         }
         else {
             $http.put('/Kash.JSTSUT.Web/api/Foos/' + vm.Id, { Name: vm.Name, Status: vm.Status }).then(function (req) {
                 vm.showMessage('Información del sistema', 'Guardado correctamente');
+            },
+            function (result) {
+                vm.showMessage(result.status, result.statusText);
+                vm.new();
             });
         };
     }
@@ -44,8 +53,12 @@ function FooManagerController($http) {
         var theId = vm.Id;
         $http.delete('/Kash.JSTSUT.Web/api/Foos/' + theId, {}).then(function (req) {
             vm.showMessage('Información del sistema', 'Eliminado correctamente');
-            vm.retrieveFoo('previous', theId);
+            vm.retrieve('previous', theId);
             vm.isNew = false;
+        },
+        function (result) {
+            vm.showMessage(result.status, result.statusText);
+            vm.new();
         });
     }
 
@@ -57,7 +70,8 @@ function FooManagerController($http) {
         vm.isNew = true;
     }
 
-    vm.retrieveFoo = function (mode, id) {
+    vm.retrieve = function (mode, id) {
+
         if (id) {
             startId = id;
         }
@@ -73,6 +87,10 @@ function FooManagerController($http) {
                 vm.Id = req.data.Id;
                 vm.Name = req.data.Name;
                 vm.Status = req.data.Status;
+            },
+            function (result) {
+                vm.showMessage(result.status, result.statusText);
+                vm.new();
             });
         },
         function (result) {
@@ -81,7 +99,7 @@ function FooManagerController($http) {
         });
     }
 
-    vm.retrieveFoo('first');
+    vm.retrieve('first');
 }
 
 angular
