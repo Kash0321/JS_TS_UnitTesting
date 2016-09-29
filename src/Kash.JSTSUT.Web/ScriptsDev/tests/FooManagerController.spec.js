@@ -232,7 +232,6 @@
             .expectGET('/Kash.JSTSUT.Web/api/Foos/undefined/firstId')
             .respond(200, 1);
 
-
         $httpMock
             .expectGET('/Kash.JSTSUT.Web/api/Foos/1')
             .respond(200, { Id: 1, Name: '111', Status: '111' });
@@ -264,6 +263,40 @@
 
         $httpMock
             .expectGET('/Kash.JSTSUT.Web/api/Foos/undefined/firstId')
+            .respond(404);
+
+        //Act
+        controller.retrieve('first');
+        $httpMock.flush();
+
+        //Assert
+        expect(controller.messageStatus).toBe(404);
+
+        expect(controller.Id).toBe(0);
+        expect(controller.Name).toBe('');
+        expect(controller.Status).toBe('');
+        expect(controller.isNew).toBe(true);
+    });
+
+    it("retrieve() [first_getid_notfound]", function () {
+        //Arrange
+        var controller = createController();
+
+        // Flusheamos las peticiones de construcción del controlador
+        $httpMock.flush();
+
+        controller.isNew = true;
+
+        controller.Id = undefined;
+        controller.Name = 'TestName';
+        controller.Status = 'TestStatus';
+
+        $httpMock
+            .expectGET('/Kash.JSTSUT.Web/api/Foos/undefined/firstId')
+            .respond(200, 1);
+
+        $httpMock
+            .expectGET('/Kash.JSTSUT.Web/api/Foos/1')
             .respond(404);
 
         //Act
@@ -343,6 +376,41 @@
         expect(controller.isNew).toBe(true);
     });
 
+    it("retrieve() [previous_getid_notfound]", function () {
+        //Arrange
+        var controller = createController();
+
+        // Flusheamos las peticiones de construcción del controlador
+        $httpMock.flush();
+
+        controller.isNew = true;
+
+        controller.Id = 10;
+        controller.Name = 'TestName';
+        controller.Status = 'TestStatus';
+
+        $httpMock
+            .expectGET('/Kash.JSTSUT.Web/api/Foos/10/previousId')
+            .respond(200, 5);
+
+
+        $httpMock
+            .expectGET('/Kash.JSTSUT.Web/api/Foos/5')
+            .respond(404);
+
+        //Act
+        controller.retrieve('previous');
+        $httpMock.flush();
+
+        //Assert
+        expect(controller.messageStatus).toBe(404);
+
+        expect(controller.Id).toBe(0);
+        expect(controller.Name).toBe('');
+        expect(controller.Status).toBe('');
+        expect(controller.isNew).toBe(true);
+    });
+
     it("retrieve() [next]", function () {
         //Arrange
         var controller = createController();
@@ -392,6 +460,41 @@
 
         $httpMock
             .expectGET('/Kash.JSTSUT.Web/api/Foos/10/nextId')
+            .respond(404);
+
+        //Act
+        controller.retrieve('next');
+        $httpMock.flush();
+
+        //Assert
+        expect(controller.messageStatus).toBe(404);
+
+        expect(controller.Id).toBe(0);
+        expect(controller.Name).toBe('');
+        expect(controller.Status).toBe('');
+        expect(controller.isNew).toBe(true);
+    });
+
+    it("retrieve() [next_getid_notfound]", function () {
+        //Arrange
+        var controller = createController();
+
+        // Flusheamos las peticiones de construcción del controlador
+        $httpMock.flush();
+
+        controller.isNew = true;
+
+        controller.Id = 10;
+        controller.Name = 'TestName';
+        controller.Status = 'TestStatus';
+
+        $httpMock
+            .expectGET('/Kash.JSTSUT.Web/api/Foos/10/nextId')
+            .respond(200, 15);
+
+
+        $httpMock
+            .expectGET('/Kash.JSTSUT.Web/api/Foos/15')
             .respond(404);
 
         //Act

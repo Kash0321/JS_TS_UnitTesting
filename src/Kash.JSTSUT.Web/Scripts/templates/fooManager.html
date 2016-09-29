@@ -1,7 +1,7 @@
 <div id="fooManager">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Datos vinculados
+            Foo
             <span ng-show="vm.isNew" class="badge pull-right">Nuevo</span>
         </div>
         <div class="panel-body">
@@ -23,9 +23,9 @@
     </div>
     <div class="well well-sm clearfix">
         <div class="pull-left">
-            <button ng-show="!vm.isNew" class="btn btn-default" ng-click="vm.retrieveFoo('previous')">< Anterior</button>
-            <button class="btn btn-default" ng-click="vm.retrieveFoo('first')">Primero</button>
-            <button ng-show="!vm.isNew" class="btn btn-default" ng-click="vm.retrieveFoo('next')">Siguiente ></button>
+            <button ng-show="!vm.isNew" class="btn btn-default" ng-click="vm.retrieve('previous')">< Anterior</button>
+            <button class="btn btn-default" ng-click="vm.retrieve('first')">Primero</button>
+            <button ng-show="!vm.isNew" class="btn btn-default" ng-click="vm.retrieve('next')">Siguiente ></button>
         </div>
         <div class="pull-right">
             <button ng-show="!vm.isNew" class="btn btn-success" ng-click="vm.new()">Nuevo</button>
