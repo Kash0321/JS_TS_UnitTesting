@@ -3,12 +3,12 @@
 module.exports = function (config) {
     config.set({
 
-        preprocessors: {
+        //preprocessors: {
             // source files, that you wanna generate coverage for
             // do not include tests or libraries
             // (these files will be instrumented by Istanbul)
-            './Scripts/*.js': ['coverage']
-        },
+            //'./Scripts/*.ts': ['coverage']
+        //},
 
         // base path, that will be used to resolve files and exclude
         basePath: '.',
@@ -17,9 +17,8 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-          'Scripts/lib.js',
-          'Scripts/app.js',
-          'ScriptsDev/tests/*.spec.js'
+          'Scripts/dist/bundle.js',
+          'Scripts/tests/*.spec.js'
         ],
 
 

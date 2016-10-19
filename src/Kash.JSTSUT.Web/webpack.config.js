@@ -5,7 +5,7 @@ var path = require('path');
 module.exports = {
     entry: "./scripts/app.ts",
     output: {
-        path: path.join(__dirname + '/scripts'),
+        path: path.join(__dirname + '/scripts/dist'),
         filename: "bundle.js"
     },
     // Turn on sourcemaps
