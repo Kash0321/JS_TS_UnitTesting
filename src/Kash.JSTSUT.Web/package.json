@@ -1,22 +1,37 @@
 {
-  "version": "1.0.0",
-  "name": "asp.net",
+  "version": "0.0.1",
+  "name": "js-ts-unittesting",
+  "description": "Prueba de concepto de pruebas unitarias sobre código ts/js",
   "private": true,
-  "dependencies": {
-    "jshint": "2.9.2",
-    "karma-coverage": "1.0.0"
+  "main": "app.ts",
+  "author": "kash",
+  "repository": {
+    "type": "git",
+    "url": "https://kash.visualstudio.com/DefaultCollection/SandBox2/_git/JS_TS_UnitTesting"
   },
+  "license": "MIT",
   "devDependencies": {
-    "del": "2.2.0",
-    "gulp": "3.9.1",
-    "gulp-concat": "2.6.0",
-    "gulp-filter": "4.0.0",
-    "gulp-less": "3.1.0",
-    "gulp-main-bower-files": "1.5.1",
-    "gulp-rename": "1.2.2",
-    "gulp-sourcemaps": "1.6.0",
-    "gulp-uglify": "1.5.3",
-    "gulp-uglifycss": "1.0.6",
+    "@types/angular": "1.5.16",
+    "@types/bootstrap": "3.3.32",
+    "@types/jquery": "2.0.32",
+    "@types/requirejs": "2.1.28",
+    "bootstrap-webpack": "0.0.5",
+    "css-loader": "0.25.0",
+    "exports-loader": "0.6.3",
+    "extract-text-webpack-plugin": "1.0.1",
+    "file-loader": "0.9.0",
+    "imports-loader": "0.6.5",
+    "less": "^2.7.1",
+    "less-loader": "2.2.3",
+    "style-loader": "0.13.1",
+    "ts-loader": "0.8.2",
+    "url-loader": "0.5.7",
+    "raw-loader": "0.5.1",
+    "webpack": "1.12.14",
+
+    "angular-mocks": "1.5.8",
+
+    "jshint": "2.9.2",
     "babel-core": "6.13.2",
     "babel-istanbul": "0.11.0",
     "istanbul": "0.4.4",
@@ -39,5 +54,15 @@
     "karma-ie-launcher": "1.0.0",
     "karma-sourcemap-loader": "0.3.7",
     "karma-spec-reporter": "0.0.26"
+  },
+  "dependencies": {
+    "angular": "1.5.8",
+    "angular-ui-router": "0.3.1",
+    "bootstrap": "3.3.7",
+    "jquery": "3.1.1",
+    "jquery-validation": "1.15.1",
+    "jquery-validation-unobtrusive": "3.2.6",
+    "typescript": "2.0.3",
+    "respond": "0.9.0"
   }
 }
