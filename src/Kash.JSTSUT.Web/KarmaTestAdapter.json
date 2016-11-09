@@ -10,6 +10,6 @@
   "LogDirectory": "TestResults/Karma",
 
   "config": {
-    "browsers": [ "PhantomJS" ]
+    "browsers": [ "Chrome" ]
   }
 }

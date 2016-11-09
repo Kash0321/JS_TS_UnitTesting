@@ -1,16 +1,32 @@
-﻿describe("FooManagerController Tests -", function () {
+﻿//declare var require: {
+//    <T>(path: string): T;
+//    (paths: string[], callback: (...modules: any[]) => void): void;
+//    ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
+//};
+
+import angular = require('angular');
+
+import ngMock = require('angular-mocks');
+
+import jasmine = require('jasmine');
+
+import { FooManagerDirective, FooManagerController, IFooManagerVM } from '../FooManagerDirective';
+
+var $httpMock: ng.IHttpBackendService;
+
+describe("FooManagerController Tests -", () => {
 
     var $httpBackend, createController;
 
     beforeEach(angular.mock.module('app'));
 
-    beforeEach(inject(function ($injector) {
+    beforeEach(inject(($injector) => {
         // Set up the mock http service responses
         $httpMock = $injector.get('$httpBackend');
 
         // backend definition common for all tests
-        firstId =  $httpMock.when('GET', '/Kash.JSTSUT.Web/api/Foos/undefined/firstId').respond(200, 123);
-        firstFoo = $httpMock.when('GET', '/Kash.JSTSUT.Web/api/Foos/123').respond(200, { Id: 123, Name: 'TestName', Status: 'TestStatus' });
+        let firstId =  $httpMock.when('GET', '/Kash.JSTSUT.Web/api/Foos/undefined/firstId').respond(200, 123);
+        let firstFoo = $httpMock.when('GET', '/Kash.JSTSUT.Web/api/Foos/123').respond(200, { Id: 123, Name: 'TestName', Status: 'TestStatus' });
 
         // Get hold of a scope (i.e. the root scope)
         // $rootScope = $injector.get('$rootScope');
@@ -18,17 +34,17 @@
         // The $controller service is used to create instances of controllers
         var $controller = $injector.get('$controller');
 
-        createController = function () {
+        createController = () => {
             return $controller('FooManagerController', {  });
         };
     }));
 
-    afterEach(function () {
+    afterEach(() => {
         $httpMock.verifyNoOutstandingExpectation();
         $httpMock.verifyNoOutstandingRequest();
     });
 
-    it("save() [create]", function () {
+    it("save() [create]", () => {
         //Arrange
         var controller = createController();
 
@@ -60,7 +76,7 @@
         expect(controller.isNew).toBe(false);
     });
 
-    it("save() [create_error]", function () {
+    it("save() [create_error]", () => {
         //Arrange
         var controller = createController();
 
@@ -90,7 +106,7 @@
         expect(controller.Status).toBe('');
     });
 
-    it("save() [update]", function () {
+    it("save() [update]", () => {
         //Arrange
         var controller = createController();
 
@@ -122,7 +138,7 @@
         expect(controller.isNew).toBe(false);
     });
 
-    it("save() [update_notfound]", function () {
+    it("save() [update_notfound]", () => {
         //Arrange
         var controller = createController();
 
@@ -152,7 +168,7 @@
         expect(controller.isNew).toBe(true);
     });
 
-    it("delete()", function () {
+    it("delete()", () => {
         //Arrange
         var controller = createController();
 
@@ -186,7 +202,7 @@
         expect(controller.isNew).toBe(false);
     });
 
-    it("delete() [notfound]", function () {
+    it("delete() [notfound]", () => {
         //Arrange
         var controller = createController();
 
@@ -215,7 +231,7 @@
         expect(controller.isNew).toBe(true);
     });
 
-    it("retrieve() [first]", function () {
+    it("retrieve() [first]", () => {
         //Arrange
         var controller = createController();
 
@@ -248,7 +264,7 @@
         expect(controller.isNew).toBe(false);
     });
 
-    it("retrieve() [first_empty]", function () {
+    it("retrieve() [first_empty]", () => {
         //Arrange
         var controller = createController();
 
@@ -278,7 +294,7 @@
         expect(controller.isNew).toBe(true);
     });
 
-    it("retrieve() [first_getid_notfound]", function () {
+    it("retrieve() [first_getid_notfound]", () => {
         //Arrange
         var controller = createController();
 
@@ -312,7 +328,7 @@
         expect(controller.isNew).toBe(true);
     });
 
-    it("retrieve() [previous]", function () {
+    it("retrieve() [previous]", () => {
         //Arrange
         var controller = createController();
 
@@ -346,7 +362,7 @@
         expect(controller.isNew).toBe(false);
     });
 
-    it("retrieve() [previous_notfound]", function () {
+    it("retrieve() [previous_notfound]", () => {
         //Arrange
         var controller = createController();
 
@@ -376,7 +392,7 @@
         expect(controller.isNew).toBe(true);
     });
 
-    it("retrieve() [previous_getid_notfound]", function () {
+    it("retrieve() [previous_getid_notfound]", () => {
         //Arrange
         var controller = createController();
 
@@ -411,7 +427,7 @@
         expect(controller.isNew).toBe(true);
     });
 
-    it("retrieve() [next]", function () {
+    it("retrieve() [next]", () => {
         //Arrange
         var controller = createController();
 
@@ -445,7 +461,7 @@
         expect(controller.isNew).toBe(false);
     });
 
-    it("retrieve() [next_notfound]", function () {
+    it("retrieve() [next_notfound]", () => {
         //Arrange
         var controller = createController();
 
@@ -475,7 +491,7 @@
         expect(controller.isNew).toBe(true);
     });
 
-    it("retrieve() [next_getid_notfound]", function () {
+    it("retrieve() [next_getid_notfound]", () => {
         //Arrange
         var controller = createController();
 
@@ -510,7 +526,7 @@
         expect(controller.isNew).toBe(true);
     });
 
-    it("new()", function () {
+    it("new()", () => {
         //Arrange
         var controller = createController();
 

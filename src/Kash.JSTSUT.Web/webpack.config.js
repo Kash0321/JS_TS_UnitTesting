@@ -2,7 +2,7 @@
 var webpack = require('webpack');
 var path = require('path');
 
-module.exports = {
+module.exports = [{
     entry: "./scripts/app.ts",
     output: {
         path: path.join(__dirname + '/scripts/dist'),
@@ -41,4 +41,30 @@ module.exports = {
             { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=image/svg+xml" }
         ]
     }
-};
+},
+{
+    entry: "./scripts/tests/FooManagerController.spec.ts",
+    output: {
+        path: path.join(__dirname + '/scripts/tests'),
+        filename: "tests.spec.js"
+    },
+    // Turn on sourcemaps
+    devtool: 'source-map',
+    resolve: {
+        // Resolvable extensions.
+        extensions: ["", ".webpack.js", ".web.js", ".css", ".ts", ".tsx", ".js"]
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        }),
+        //new webpack.optimize.UglifyJsPlugin()
+    ],
+    module: {
+        loaders: [
+            // all files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'
+            { test: /\.tsx?$/, loader: "ts-loader" },
+        ]
+    }
+}]

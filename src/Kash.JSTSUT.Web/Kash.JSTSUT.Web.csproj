@@ -191,7 +191,7 @@
     <Content Include="karma.conf.js" />
     <Content Include="webpack.config.js" />
     <None Include="KarmaTestAdapter.json" />
-    <Content Include="Scripts\tests\FooManagerController.spec.js" />
+    <TypeScriptCompile Include="Scripts\tests\FooManagerController.spec.ts" />
     <Content Include="Scripts\templates\fooManager.html" />
     <Content Include="Scripts\templates\messageModal.html" />
     <Content Include="Scripts\_references.js" />
