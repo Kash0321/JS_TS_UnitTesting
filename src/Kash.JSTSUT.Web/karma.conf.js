@@ -79,7 +79,7 @@ module.exports = function (config) {
         // - IE (only Windows)
         //browsers: ['Chrome'],
         //browsers: ['Chrome', 'Firefox', 'IE'],
-        browsers: ['PhantomJS'], // Para probar sin navegador, con PhantomJS: http://phantomjs.org/
+        browsers: ['Chrome'], // Para probar sin navegador, con PhantomJS: http://phantomjs.org/
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 5000,
