@@ -9,6 +9,10 @@
     "type": "git",
     "url": "https://kash.visualstudio.com/DefaultCollection/SandBox2/_git/JS_TS_UnitTesting"
   },
+  "scripts": {
+    "start": "webpack --config webpack.dev.js --watch --NODE_ENV=dev",
+    "test": "karma start --NODE_ENV=test"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/angular": "1.5.16",
@@ -30,7 +34,6 @@
     "url-loader": "0.5.7",
     "raw-loader": "0.5.1",
     "webpack": "1.12.14",
-
     "angular-mocks": "1.5.8",
 
     "jshint": "2.9.2",

@@ -189,7 +189,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\css\style.css" />
     <Content Include="karma.conf.js" />
-    <Content Include="webpack.config.js" />
+    <Content Include="webpack.dev.js" />
+    <Content Include="webpack.test.js" />
     <None Include="KarmaTestAdapter.json" />
     <TypeScriptCompile Include="Scripts\tests\FooManagerController.spec.ts" />
     <Content Include="Scripts\templates\fooManager.html" />

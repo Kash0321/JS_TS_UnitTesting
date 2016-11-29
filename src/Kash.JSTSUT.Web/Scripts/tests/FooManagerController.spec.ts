@@ -14,8 +14,6 @@ import ngMock = require('angular-mocks');
 
 import { FooManagerDirective, FooManagerController, IFooManagerVM } from '../FooManagerDirective';
 
-//require('../FooManagerDirective');
-
 var $httpMock: ng.IHttpBackendService;
 
 describe("FooManagerController Tests -", () => {

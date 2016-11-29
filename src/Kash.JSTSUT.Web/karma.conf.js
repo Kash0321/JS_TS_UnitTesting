@@ -1,5 +1,9 @@
 ﻿'use strict';
 
+
+var webpackConfig = require('./webpack.test.js');
+webpackConfig.entry = {};
+
 module.exports = function (config) {
     config.set({
 
@@ -18,7 +22,7 @@ module.exports = function (config) {
         // list of files / patterns to load in the browser
         files: [
           'Scripts/dist/bundle.js',
-          'Scripts/tests/*.spec.js'
+          'Scripts/dist/tests.js'
         ],
 
 
@@ -52,6 +56,8 @@ module.exports = function (config) {
                 }
             ]
         },
+
+        webpack: webpackConfig,
 
         // web server port
         port: 8080,
