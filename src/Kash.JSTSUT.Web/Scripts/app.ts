@@ -1,10 +1,4 @@
-﻿declare var require: {
-    <T>(path: string): T;
-    (paths: string[], callback: (...modules: any[]) => void): void;
-    ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
-};
-
-import * as $ from 'jquery';
+﻿import * as $ from 'jquery';
 
 require('../node_modules/bootstrap/dist/css/bootstrap.css');
 require('../node_modules/bootstrap/dist/css/bootstrap-theme.css');
@@ -15,7 +9,7 @@ let bs = bootStrap;
 
 import angular = require('angular');
 
-import { IndexController } from './indexController';
+import { IndexController } from './IndexController';
 import { FooManagerDirective, FooManagerController, IFooManagerVM } from './FooManagerDirective';
 import { MessageModalDirective, MessageModalController } from './MessageModalDirective';
 
@@ -23,14 +17,14 @@ angular.module('app', []);
 
 angular
     .module('app')
-    .controller('indexController', IndexController);
+    .controller('IndexController', IndexController);
 
 angular
     .module('app')
     .directive('fooManager', FooManagerDirective.Factory())
-    .controller('fooManagerController', FooManagerController);
+    .controller('FooManagerController', FooManagerController);
 
 angular
     .module('app')
     .directive('messageModal', MessageModalDirective.Factory())
-    .controller('messageModalController', MessageModalController);
+    .controller('MessageModalController', MessageModalController);

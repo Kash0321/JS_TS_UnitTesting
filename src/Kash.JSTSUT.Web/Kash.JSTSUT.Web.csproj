@@ -189,13 +189,13 @@
     <Content Include="Global.asax" />
     <Content Include="Content\css\style.css" />
     <Content Include="karma.conf.js" />
+    <Content Include="loaders.js" />
     <Content Include="webpack.dev.js" />
     <Content Include="webpack.test.js" />
     <None Include="KarmaTestAdapter.json" />
     <TypeScriptCompile Include="Scripts\tests\FooManagerController.spec.ts" />
     <Content Include="Scripts\templates\fooManager.html" />
     <Content Include="Scripts\templates\messageModal.html" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -249,7 +249,7 @@
     <TypeScriptCompile Include="Scripts\app.ts" />
     <TypeScriptCompile Include="Scripts\FooManagerDirective.ts" />
     <TypeScriptCompile Include="Scripts\IndexController.ts" />
-    <TypeScriptCompile Include="Scripts\lib.d.ts" />
+    <TypeScriptCompile Include="Scripts\declarations.d.ts" />
     <TypeScriptCompile Include="Scripts\MessageModalDirective.ts" />
   </ItemGroup>
   <PropertyGroup>

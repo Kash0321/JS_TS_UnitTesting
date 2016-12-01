@@ -1,11 +1,12 @@
-﻿var pkg = require('./package.json');
+﻿var loaders = require("./loaders");
+var pkg = require('./package.json');
 var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-    entry: "./scripts/app.ts",
+    entry: "./Scripts/app.ts",
     output: {
-        path: path.join(__dirname + '/scripts/tests'),
+        path: path.join('./Scripts/tests'),
         filename: "bundle.js"
     },
     // Turn on sourcemaps
@@ -21,12 +22,10 @@ module.exports = {
             jQuery: "jquery",
             'window.jQuery': 'jquery',
             'window.jquery': 'jquery'
-        }),
+        })
         //new webpack.optimize.UglifyJsPlugin()
     ],
     module: {
-        loaders: [
-            { test: /\.ts(x?)$/, loader: 'ts-loader' },
-        ]
+        loaders: loaders
     }
-}
+};

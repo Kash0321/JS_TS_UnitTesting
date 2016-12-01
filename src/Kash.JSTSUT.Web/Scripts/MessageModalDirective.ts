@@ -1,10 +1,4 @@
-﻿declare var require: {
-    <T>(path: string): T;
-    (paths: string[], callback: (...modules: any[]) => void): void;
-    ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
-};
-
-export class MessageModalDirective {
+﻿export class MessageModalDirective {
     public link: ($scope: ng.IScope, $element: ng.IAugmentedJQuery, $attrs: ng.IAttributes) => void;
     public restrict = 'E';
     public replace = true;

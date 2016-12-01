@@ -1,18 +1,22 @@
 ﻿'use strict';
 
-
 var webpackConfig = require('./webpack.test.js');
 webpackConfig.entry = {};
 
 module.exports = function (config) {
     config.set({
 
-        //preprocessors: {
-            // source files, that you wanna generate coverage for
-            // do not include tests or libraries
-            // (these files will be instrumented by Istanbul)
-            //'./Scripts/*.ts': ['coverage']
-        //},
+        preprocessors: {
+            'Scripts/tests/FooManagerController.spec.ts': ['webpack'],
+            'Scripts/tests/FooManagerController.spec.ts': ['coverage']
+        },
+
+        webpackMiddleware: {
+            stats: {
+                chunkModules: false,
+                colors: true
+            }
+        },
 
         // base path, that will be used to resolve files and exclude
         basePath: '.',
@@ -21,13 +25,12 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-          'Scripts/dist/bundle.js',
-          'Scripts/dist/tests.js'
+          'Scripts/tests/FooManagerController.spec.ts'
         ],
 
 
         // list of files to exclude
-        exclude: ['Scripts/_references.js'],
+        // exclude: ['Scripts/_references.js'],
 
         // test results reporter to use
         // possible values: dots || progress || growl
@@ -70,7 +73,7 @@ module.exports = function (config) {
 
         // level of logging
         // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-        logLevel: config.LOG_DEBUG,
+        logLevel: config.LOG_INFO,
 
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: true,
