@@ -1,30 +1,30 @@
-﻿export class MessageModalDirective {
+export class MessageModalDirective {
     public link: ($scope: ng.IScope, $element: ng.IAugmentedJQuery, $attrs: ng.IAttributes) => void;
-    public restrict = 'E';
+    public restrict = "E";
     public replace = true;
-    public template = require('!raw!./templates/messageModal.html');
+    public template = require("!raw!./MessageModal.html");
     public scope = {};
     public bindToController = {
-        messageStatus: '=',
-        message: '='
+        messageStatus: "=",
+        message: "="
     };
     public controller = MessageModalController;
-    controllerAs = 'vm';
-
-    constructor() {
-        MessageModalDirective.prototype.link = ($scope: ng.IScope, $element: ng.IAugmentedJQuery, $attrs: ng.IAttributes) => {
-            $element.attr('id', $attrs['modalId']);
-        };
-    }
+    public controllerAs = "vm";
 
     public static Factory(): any {
         var directive = () => {
             return new MessageModalDirective();
         };
 
-        directive['$inject'] = [];
+        directive["$inject"] = [];
 
         return directive;
+    }
+
+    constructor() {
+        MessageModalDirective.prototype.link = ($scope: ng.IScope, $element: ng.IAugmentedJQuery, $attrs: ng.IAttributes) => {
+            $element.attr("id", $attrs["modalId"]);
+        };
     }
 }
 

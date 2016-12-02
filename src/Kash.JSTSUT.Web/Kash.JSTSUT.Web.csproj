@@ -185,17 +185,30 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientCode\index.html" />
+    <Content Include="ClientCode\modules\application\angular\directives\fooManager\FooManager.html" />
+    <Content Include="ClientCode\modules\application\angular\directives\messageModal\MessageModal.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\css\style.css" />
     <Content Include="karma.conf.js" />
-    <Content Include="loaders.js" />
-    <Content Include="webpack.dev.js" />
-    <Content Include="webpack.test.js" />
+    <Content Include="ClientCode\styles\screen.scss" />
+    <Content Include="wallaby.js" />
+    <Content Include="webpack\loaders.js" />
+    <Content Include="webpack\webpack.build.js" />
+    <Content Include="webpack\webpack.dev.js" />
+    <Content Include="webpack\webpack.test.js" />
     <None Include="KarmaTestAdapter.json" />
-    <TypeScriptCompile Include="Scripts\tests\FooManagerController.spec.ts" />
-    <Content Include="Scripts\templates\fooManager.html" />
-    <Content Include="Scripts\templates\messageModal.html" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
+    <Content Include="typings.json" />
+    <TypeScriptCompile Include="ClientCode\declarations.d.ts" />
+    <TypeScriptCompile Include="ClientCode\index.ts" />
+    <TypeScriptCompile Include="ClientCode\modules\application\angular\controllers\IndexController.ts" />
+    <TypeScriptCompile Include="ClientCode\modules\application\angular\directives\fooManager\FooManagerController.spec.ts" />
+    <TypeScriptCompile Include="ClientCode\modules\application\angular\directives\fooManager\FooManagerDirective.ts" />
+    <TypeScriptCompile Include="ClientCode\modules\application\angular\directives\messageModal\MessageModalDirective.ts" />
+    <TypeScriptCompile Include="ClientCode\modules\application\angular\index.ts" />
+    <TypeScriptCompile Include="ClientCode\test.ts" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -230,11 +243,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Scripts\tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\dist\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -244,13 +256,6 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Scripts\app.ts" />
-    <TypeScriptCompile Include="Scripts\FooManagerDirective.ts" />
-    <TypeScriptCompile Include="Scripts\IndexController.ts" />
-    <TypeScriptCompile Include="Scripts\declarations.d.ts" />
-    <TypeScriptCompile Include="Scripts\MessageModalDirective.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

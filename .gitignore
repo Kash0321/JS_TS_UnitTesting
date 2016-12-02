@@ -6,12 +6,11 @@
 *.suo
 
 /src/.vs
+/src/packages
 /src/Kash.JSTSUT.Web/bin
 /src/Kash.JSTSUT.Web/obj
-/src/packages
-/src/Kash.JSTSUT.Web/bower_components
 /src/Kash.JSTSUT.Web/node_modules
 /src/Kash.JSTSUT.Web/reports
-/src/Kash.JSTSUT.Web/scripts/dist
-/src/TestResults
-/src/Kash.JSTSUT.Web/Scripts/out
+/src/Kash.JSTSUT.Web/Scripts
+/src/Kash.JSTSUT.Web/ts_out
+/src/Kash.JSTSUT.Web/typings
