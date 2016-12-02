@@ -7,6 +7,7 @@
 
 /src/.vs
 /src/packages
+/src/Kash.JSTSUT.Web/.vscode
 /src/Kash.JSTSUT.Web/bin
 /src/Kash.JSTSUT.Web/obj
 /src/Kash.JSTSUT.Web/node_modules
